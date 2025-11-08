@@ -27,7 +27,7 @@ A powerful Python tool to download and archive all media (images, videos) from y
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/fastmodue/DISCORD-MEDIA-DOWNLOADER-ARCHIVER.git
+git clone https://github.com/fastmodue/discord-media-archiver.git
 cd discord-media-archiver
 ```
 
