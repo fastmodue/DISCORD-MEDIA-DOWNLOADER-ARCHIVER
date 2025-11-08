@@ -1,22 +1,22 @@
-# 🎬 DISCORD MEDIA DOWNLOADER & ARCHIVER
+#  DISCORD MEDIA DOWNLOADER & ARCHIVER
 
 A powerful Python tool to download and archive all media (images, videos) from your Discord DMs and Group chats with progress tracking and flexible organization options.
 
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## ✨ Features
+## Features
 
-- 📥 **Download all media** from Discord DMs and Group chats
-- 🎯 **Selective scanning** - Choose specific channels or scan all
-- 📁 **Flexible organization** - Organize by file type or create separate folders per conversation
-- 📅 **Date filtering** - Download media from a specific date onwards
-- 📊 **Progress tracking** - Real-time progress bars and download statistics
-- 📝 **Link archiving** - Automatically saves all media links with metadata
-- 🎨 **Beautiful CLI** - Clean, user-friendly interface with progress indicators
-- ⚡ **Rate limit handling** - Smart handling of Discord API rate limits
+-  **Download all media** from Discord DMs and Group chats
+-  **Selective scanning** - Choose specific channels or scan all
+-  **Flexible organization** - Organize by file type or create separate folders per conversation
+-  **Date filtering** - Download media from a specific date onwards
+-  **Progress tracking** - Real-time progress bars and download statistics
+-  **Link archiving** - Automatically saves all media links with metadata
+-  **Clean CLI** - Clean, user-friendly interface with progress indicators
+-  **Rate limit handling** - Smart handling of Discord API rate limits
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -141,11 +141,11 @@ The `links.txt` file contains:
 
 Made with ❤️ by:
 - **[@fastmodue](https://github.com/fastmodue)** - Discord: `fastmodue`
-- **[@hippo84](https://github.com/hippo84)** - Discord: `hippo844`
+- **[@HIPPO84](https://github.com/hipporr)** - Discord: `hippo844`
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
 
 ## ⚡ Support
 
