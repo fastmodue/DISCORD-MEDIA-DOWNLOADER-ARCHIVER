@@ -55,7 +55,7 @@ def get_channel_name(channel):
         if recipients:
             return f"DM with {recipients[0].get('username', 'Unknown')}"
         return "Unknown DM"
-    elif channel.get('type') == 3:  # Group DM
+    elif channel.get('type') == 3:  # group
         return channel.get('name', 'Unnamed Group')
     return "Unknown Channel"
 
@@ -80,7 +80,7 @@ def get_messages(token, channel_id, after_date=None):
                 break
             
             for msg in messages:
-                # Check date filter
+                # date filter
                 if after_date:
                     msg_date = datetime.fromisoformat(msg['timestamp'].replace('Z', '+00:00'))
                     if msg_date < after_date:
@@ -91,7 +91,7 @@ def get_messages(token, channel_id, after_date=None):
             
             last_message_id = messages[-1]['id']
             print(".", end='', flush=True)
-            time.sleep(0.3)  # Rate limit protection
+            time.sleep(0.3)  # rate limit
         elif response.status_code == 429:
             retry_after = response.json().get('retry_after', 5)
             print(f"\n[RATE LIMITED] Waiting {retry_after}s...")
@@ -119,7 +119,6 @@ def download_file(url, filepath):
 
 def get_file_extension(url):
     """Extract file extension from URL"""
-    # Remove query parameters
     clean_url = url.split('?')[0]
     ext = os.path.splitext(clean_url)[1]
     return ext if ext else '.unknown'
@@ -193,13 +192,13 @@ def main():
         print("[ERROR] No channels found or unable to fetch channels!")
         return
     
-    # Separate and count
+    # seperate then count
     dms = [ch for ch in channels if ch.get('type') == 1]
     groups = [ch for ch in channels if ch.get('type') == 3]
     
     print(f"\n[Found {len(dms)} DMs and {len(groups)} groups]")
     
-    # Display channels
+    # display channels to user
     if channels:
         print("\nAvailable Channels:")
         for i, channel in enumerate(channels, 1):
@@ -218,7 +217,7 @@ def main():
     
     print(f"\n[Will scan {len(channels_to_scan)} channel(s)]")
     
-    # Folder organization option
+    # organization
     folder_per_channel = input("\nCreate separate folder for each DM/Group? (y/n) [default: n]: ").strip().lower()
     folder_per_channel = folder_per_channel == 'y'
     
@@ -227,7 +226,7 @@ def main():
     else:
         print("[Will organize by file type (images/videos)]")
     
-    # Date filter
+    # date filter
     date_input = input("\nDownload from date (YYYY-MM-DD) or press Enter for ALL TIME: ").strip()
     after_date = None
     
@@ -240,21 +239,21 @@ def main():
     else:
         print("[Downloading ALL media from ALL TIME]")
     
-    # Create base downloads directory
+    # download directory
     os.makedirs('downloads', exist_ok=True)
     
-    # Create subdirectories if not using folder per channel
+    # subdirectories
     if not folder_per_channel:
         os.makedirs('downloads/images', exist_ok=True)
         os.makedirs('downloads/videos', exist_ok=True)
     
-    # Initialize counters
+    # counters
     total_images = 0
     total_videos = 0
     total_failed = 0
     overall_processed = 0
     
-    # Calculate total attachments across all channels for overall progress
+    # math 
     print("\n[Scanning channels for media...]")
     channel_attachments = {}
     total_attachments = 0
@@ -331,7 +330,7 @@ def main():
                     filename = sanitize_filename(filename)
                     file_ext = get_file_extension(filename)
                     
-                    # Determine file type and destination
+                    # file type and destination
                     if folder_per_channel:
                         safe_channel_name = sanitize_filename(channel_name)
                         channel_folder = os.path.join('downloads', safe_channel_name)
@@ -361,14 +360,13 @@ def main():
                             file_type = 'unknown'
                             total_images += 1
                     
-                    # Create unique filename
+                    # FILE NAMES (need to fix small issue)
                     timestamp_suffix = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
                     unique_filename = f"{Path(filename).stem}_{timestamp_suffix}{file_ext}"
                     filepath = os.path.join(dest_folder, unique_filename)
                     
-                    # Download file
+                    # download the file
                     if download_file(url, filepath):
-                        # Write to links file
                         links_file.write("-" * 70 + "\n")
                         links_file.write(f"{url}\n")
                         links_file.write(f"DATE: {msg_date}\n")
@@ -381,11 +379,11 @@ def main():
                     
                     overall_processed += 1
                     progress_bar(overall_processed, total_attachments, prefix='Overall Progress')
-                    time.sleep(0.2)  # Rate limit protection
+                    time.sleep(0.2)  # Ratelimit again
     
-    print()  # New line after progress bar
+    print()  
     
-    # Final summary
+    # and a summary for the end :D
     print(f"\n╔═══════════════════════════════════════╗")
     print(f"║        DOWNLOAD COMPLETE!             ║")
     print(f"╠═══════════════════════════════════════╣")
@@ -410,3 +408,4 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\n[ERROR] {str(e)}")
         sys.exit(1)
+
