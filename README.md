@@ -3,7 +3,7 @@
 A powerful Python tool to download and archive all media (images, videos) from your Discord DMs and Group chats with progress tracking and flexible organization options.
 
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+![License: GPL v3](https://img.shields.io/badge/license-GPL%203.0-blue.svg)
 
 ## Features
 
