@@ -58,7 +58,7 @@ python main.py
 
 6. Optionally set a date filter (YYYY-MM-DD format)
 
-7. Sit back and watch the magic happen! ✨
+7. Sit back and relax 🍷
 
 ## 📂 Output Structure
 
@@ -167,29 +167,24 @@ This project is licensed under the GNU General Public License v3.0 - see the LIC
 
 ## ⚡ Support
 
-Having issues? Found a bug? Want to contribute?
-
-- 🐛 [Report a Bug](https://github.com/fastmodue/DISCORD-MEDIA-DOWNLOADER-ARCHIVER/issues)
-- 💡 [Request a Feature](https://github.com/fastmodue/DISCORD-MEDIA-DOWNLOADER-ARCHIVER/issues)
+Having issues? Found a bug? Want to contact us?
+- 📜 Contact us:
+- https://discord.gg/Ju4xe6gYJ4
+- Or add us on discord: fastmodue, hippo844
+- [Report a Bug](https://github.com/fastmodue/DISCORD-MEDIA-DOWNLOADER-ARCHIVER/issues)
+- [Request a Feature](https://github.com/fastmodue/DISCORD-MEDIA-DOWNLOADER-ARCHIVER/issues)
+  
 - ⭐ Star this repo if you find it useful!
-
-## 🔮 Roadmap
-
-- [ ] Multi-threaded downloads
-- [ ] Resume interrupted downloads
-- [ ] Server/Guild support
-- [ ] Web interface
-- [ ] Duplicate detection
 
 ## 📸 Screenshots
 
 ```
-╔═══════════════════════════════════════════════════════╗
-║                                                       ║
-║          DISCORD MEDIA DOWNLOADER & ARCHIVER          ║
-║                   BY FASTMODUE                        ║
-║                                                       ║
-╚═══════════════════════════════════════════════════════╝
+ ╔═══════════════════════════════════════════════════════╗
+ ║                                                       ║
+ ║          DISCORD MEDIA DOWNLOADER & ARCHIVER          ║
+ ║                BY FASTMODUE & HIPPO84                 ║
+ ║                                                       ║
+ ╚═══════════════════════════════════════════════════════╝
 
 [Overall Progress] ████████████████████░░░░░░░░░ 65% (130/200)
 ```
